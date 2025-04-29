@@ -5,6 +5,7 @@ require_once 'db.php';
 // Recoger datos
 $nombres = trim($_POST['nombres']);
 $apellidos = trim($_POST['apellidos']);
+$documento_identidad = trim($_POST['documento_identidad']);
 $edad = intval($_POST['edad']);
 $pais = trim($_POST['pais']);
 $ciudad = trim($_POST['ciudad']);
@@ -15,21 +16,12 @@ $descripcion = trim($_POST['descripcion']);
 $acepta_tratamiento_datos = isset($_POST['acepta_tratamiento_datos']) ? 1 : 0;
 $rol = $_POST['rol'];
 
-// Primero, verificar si el correo ya existe
-$sql_check = "SELECT id FROM personas WHERE correo_electronico = :correo_electronico";
-$stmt_check = $pdo->prepare($sql_check);
-$stmt_check->execute([':correo_electronico' => $correo_electronico]);
-
-if ($stmt_check->rowCount() > 0) {
-    // El correo ya está registrado
-    die("Error: Este correo electrónico ya está registrado.");
-}
-
-// Insertar en personas
-$sql = "INSERT INTO personas (nombres, apellidos, edad, pais, ciudad, direccion, telefono, correo_electronico, acepta_tratamiento_datos)
-        VALUES (:nombres, :apellidos, :edad, :pais, :ciudad, :direccion, :telefono, :correo_electronico, :acepta_tratamiento_datos)";
+// Insertar en personas (ya sin restricción de correo)
+$sql = "INSERT INTO personas (documento_identidad, nombres, apellidos, edad, pais, ciudad, direccion, telefono, correo_electronico, acepta_tratamiento_datos)
+        VALUES (:documento_identidad, :nombres, :apellidos, :edad, :pais, :ciudad, :direccion, :telefono, :correo_electronico, :acepta_tratamiento_datos)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
+    ':documento_identidad' => $documento_identidad,
     ':nombres' => $nombres,
     ':apellidos' => $apellidos,
     ':edad' => $edad,
@@ -73,3 +65,4 @@ if ($rol === 'beneficiario') {
 
 echo "Formulario enviado exitosamente.";
 ?>
+
