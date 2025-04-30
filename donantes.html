@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abriga al Campo Colaboradores</title>
-    <link rel="stylesheet" href="colaboradores.css"> <!-- Vinculamos la hoja de estilos CSS -->
+    <title>Abriga al Campo Donantes</title>
+    <link rel="stylesheet" href="donantes.css"> <!-- Vinculamos la hoja de estilos CSS -->
 
 </head>
 
@@ -55,9 +55,10 @@
 
 
         <form action="procesar_formulario.php" method="POST">
-            <h1>Formulario Colaboradores</h1>
-            <!-- Campo hidden para identificar que es colaborador -->
-            <input type="hidden" name="rol" value="colaborador">
+
+            <h1 class="text-center"> Formulario Donantes</h1><br>
+            <!-- Identificador del rol -->
+            <input type="hidden" name="rol" value="donante">
 
             <label for="nombres">Nombres:</label>
             <input type="text" id="nombres" name="nombres" required>
@@ -86,54 +87,24 @@
             <label for="correo_electronico">Correo electrónico:</label>
             <input type="email" id="correo_electronico" name="correo_electronico" required>
 
-            <!-- Menú desplegable para tipo de colaboración -->
-            <label for="tipo_colaboracion">Tipo de colaboración:</label>
-            <select id="tipo_colaboracion" name="tipo_colaboracion" required>
+            <!-- Menú para tipo de donación -->
+            <label for="tipo_donacion">Tipo de donación:</label>
+            <select id="tipo_donacion" name="tipo_donacion" required>
                 <option value="">Seleccione una opción</option>
-                <option value="Administrativo">Administrativo</option>
-                <option value="Mano de Obra">Mano de Obra</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Especie">Especie</option>
             </select>
 
-            <label for="descripcion">Descripción de la colaboración:</label>
+            <label for="descripcion">Descripción de la donación:</label>
             <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
 
             <label>
                 <input type="checkbox" name="acepta_tratamiento_datos" required>
                 Acepto el tratamiento de mis datos personales
-            </label><br>
+            </label><br><br>
 
             <button type="submit">Enviar</button>
         </form>
-
-        <main>
-                     
-            <!-- Noticias en el centro -->
-            <div class="noticias">
-              <h2>Noticias y anuncios</h2>
-              <p>Este espacio está reservado para publicaciones de la fundación.</p>
-            </div>
-        </main>
-
-        
-                      
-
-        <!-- Sesion de login verificar stilos -->
-        <div class="login-box">
-            <form action="procesar_login.php" method="POST">
-
-                <h3>ADMINISTRATIVOS<br>FUNDACIÓN ABRIGA AL CAMPO</h3><br>
-
-                <label for="usuario">Usuario*</label>
-                <input type="text" name="usuario" required>
-
-                <label for="contrasena">Contraseña*</label>
-                <input type="password" name="contrasena" required><br>
-
-                <div id="emailHelp" class="form-text">*No compartas tus datos de ingreso con nadie.
-                </div> <br>
-                <button type="submit" name="login">Iniciar sesión</button>
-            </form>
-        </div>
 
 
     </main>
