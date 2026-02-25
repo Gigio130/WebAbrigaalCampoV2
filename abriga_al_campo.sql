@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2025 a las 02:52:27
+-- Tiempo de generación: 03-05-2025 a las 01:15:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `beneficiarios` (
 
 INSERT INTO `beneficiarios` (`id`, `persona_id`, `descripcion`) VALUES
 (3, 4, 'prueba 1 necesito pc'),
-(4, 5, 'Prueba dos: duplicidad de correo.');
+(4, 5, 'Prueba dos: duplicidad de correo.'),
+(5, 8, 'Prueba 5 praocessar para Postman');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,11 @@ INSERT INTO `personas` (`id`, `documento_identidad`, `nombres`, `apellidos`, `ed
 (4, '75003116', 'Elgidio', 'Aristizabal Marin', 48, 'Colombia', 'Manizales', 'Calle 56C No. 18A-10 Villa del Rio', '3112574352', 'Gigio130@hotmail.com', 1, '2025-04-29 00:30:30'),
 (5, '30239259', 'Yeimy Andrea', 'Giraldo Buitrago', 42, 'Colombia', 'Manizales', 'Calle 56C No. 18A-10 Villa del Rio', '3103774579', 'Gigio130@hotmail.com', 1, '2025-04-29 00:31:35'),
 (6, '75003116', 'Elgidio', 'Aristizabal Marin', 47, 'Colombia', 'Manizales', 'Calle 56C No. 18A-10 Villa del Rio', '3112574352', 'Gigio130@hotmail.com', 1, '2025-04-29 00:32:17'),
-(7, '30239259', 'Yeimy Andrea', 'Giraldo Buitrago', 42, 'Colombia', 'Manizales', 'Calle 56C No. 18A-10 Villa del Rio', '3103774579', 'yeangibu@gmail.com', 1, '2025-04-29 19:43:59');
+(7, '30239259', 'Yeimy Andrea', 'Giraldo Buitrago', 42, 'Colombia', 'Manizales', 'Calle 56C No. 18A-10 Villa del Rio', '3103774579', 'yeangibu@gmail.com', 1, '2025-04-29 19:43:59'),
+(8, '1031811653', 'Simon', 'Aristizabal Rodriguez', 17, 'Colombia', 'Marquetalia', 'Barrio San vicente', '3212976352', 'simonaristizabal@mail.com', 1, '2025-05-01 22:49:02'),
+(9, '', '', '', 0, '', '', '', '', '', 0, '2025-05-01 22:50:02'),
+(10, '', '', '', 0, '', '', '', '', '', 0, '2025-05-01 23:08:02'),
+(11, '123456789', 'Juan', 'Pérez', 30, 'Colombia', 'Bogotá', 'Calle 123', '3200000000', 'juan@example.com', 1, '2025-05-01 23:08:47');
 
 -- --------------------------------------------------------
 
@@ -177,7 +182,7 @@ ALTER TABLE `usuarios_admin`
 -- AUTO_INCREMENT de la tabla `beneficiarios`
 --
 ALTER TABLE `beneficiarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `colaboradores`
@@ -195,7 +200,7 @@ ALTER TABLE `donantes`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_admin`
